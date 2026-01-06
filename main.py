@@ -1,17 +1,13 @@
-from cards import Card
+from deck import Deck
 
 
 def main():
-    cardOne = Card()
-    cardTwo = Card("Two", "Clubs")
-    cardThree = Card("Two", "Diamonds")
-    cardFour = Card("Reverse", "Blue")
+    testDeck = Deck()
 
-
-    print(cardOne)
-    print(cardTwo)
-    print(cardThree)
-    print(cardFour)
+    print(testDeck)
+    print("\n")
+    testDeck.deckShuffle()
+    print(testDeck)
 
 
 

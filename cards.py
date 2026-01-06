@@ -5,8 +5,8 @@ class Card:
         self.suit = suit
 
     
-    # def __str__(self):
-    #     return f"{self.rank} of {self.suit}"
+    def __str__(self):
+        return f"{self.rank} of {self.suit}"
     
 
     def __eq__(self, other):
