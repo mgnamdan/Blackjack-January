@@ -13,16 +13,26 @@ class BJPlayer:
         self.score = 0
 
 
-    def __str__(self):
+    def __repr__(self):
         return f"{self.name}"
 
 
-    def __eq__(self):
-        pass
+    def __eq__(self, other):
+        if type(self) != type(other):
+            return False
+        if self.name != other.name:
+            return False
+        if len(self.hand) != len(other.hand):
+            return False
+        for idx in range(len(self.hand)):
+            if self.hand[idx] != other.hand[idx]:
+                return False
+        return True
 
 
     def showHand(self):
-        for idx in range(len(self.hand)):
+        print("1. (Hidden)")
+        for idx in range(1, len(self.hand)):
             print(f"{idx+1}. {self.hand[idx]}")
 
 
@@ -48,6 +58,8 @@ class BJPlayer:
 
     def makeChoice(self):
         self.calcScore()
+        print(f"{self.name}'s hand:")
+        self.showHand()
         if self.score > 17:
             return "stay"
         else:
@@ -68,9 +80,16 @@ class HumanBJPlayer(BJPlayer):
         return returnedCard
     
 
+    def showHand(self):
+        for idx in range(len(self.hand)):
+            print(f"{idx+1}. {self.hand[idx]}")
+    
+
     def makeChoice(self):
         self.calcScore()
+        print("Your hand:")
         self.showHand()
+        print("")
         choice = input("Would you like to hit or stay? -> ").lower()
         if choice == "h":
             choice == "hit"
