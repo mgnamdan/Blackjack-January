@@ -1,15 +1,16 @@
-from deck import Deck
+from managers import BJM
 
 
 def main():
-    testDeck = Deck()
+    game = BJM()
+    appOn = True
 
-    print(testDeck)
-    print("\n")
-    testDeck.deckShuffle()
-    print(testDeck)
-
-
+    while appOn:
+        playGame = input("Would you like to play a game of Blackjack? (Y/N) --> ").upper()
+        if playGame == "Y":
+            game.play_game()
+        else:
+            appOn = False
 
 
 if __name__ == "__main__":

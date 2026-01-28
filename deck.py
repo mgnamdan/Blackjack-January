@@ -21,7 +21,7 @@ class Deck:
                 self.drawPile.append(newCard)
 
     
-    def __str__(self):
+    def __repr__(self):
         return "\n".join(str(card) for card in self.drawPile)
     
 
