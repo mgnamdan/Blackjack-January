@@ -5,7 +5,10 @@ class Card:
         self.suit = suit
 
     
-    def __repr__(self):
+    # def __repr__(self):
+    #     return f"{self.rank} of {self.suit}"
+    
+    def __str__(self):
         return f"{self.rank} of {self.suit}"
     
 
